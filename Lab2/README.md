@@ -2,7 +2,16 @@
 
 This README provides an overview of the unit tests for the `Date` class, which includes methods to manipulate and handle dates correctly, including calculating the next day of a given date. The tests are organized into three separate classes to ensure thorough testing and clear separation of concerns.
 
-## Test Classes
+## Exercise 1
+
+### Table
+
+| Test Case | Expected Result | Actual Result | Verdict |
+|:-------------:|:--------------:|:--------------:| :--------------:|
+
+## Exercise 2
+
+### Test Classes
 
 1. **DateTest**
    - This class contains basic tests for the `Date` class.
