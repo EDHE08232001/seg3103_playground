@@ -35,7 +35,7 @@ This README provides an overview of the unit tests for the `Date` class, which i
 
 #### Final Result
 
-![Result Image](./assets/testRsult.png)
+![Result Image](./assets/result.png)
 
 1. **DateTest**
    - This class contains basic tests for the `Date` class.

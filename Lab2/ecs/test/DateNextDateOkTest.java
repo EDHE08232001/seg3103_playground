@@ -8,7 +8,6 @@ import java.util.stream.Stream;
 
 class DateNextDateTests {
 
-        // Method providing data for valid scenarios
         static Stream<Arguments> validDateProvider() {
                 return Stream.of(
                                 Arguments.of(new Date(2020, 5, 3), new Date(2020, 5, 4),
