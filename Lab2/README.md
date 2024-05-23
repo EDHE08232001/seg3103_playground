@@ -5,23 +5,28 @@ This README provides an overview of the unit tests for the `Date` class, which i
 ## Exercise 1
 
 ### Table
+|      Test Case       |                      Expected Result                     |                 Actual Result                 | Verdict |
+|:--------------------:|:--------------------------------------------------------:|:--------------------------------------------:|:-------:|
+| UserName: Edward12   | Registration succeeds (UserName meets all requirements). | Registration succeeds (UserName is valid).   |  Pass   |
+| UserName: ed         | Error: UserName too short.                               | Error: UserName too short.                   |  Pass   |
+| UserName: 1234567890123 | Error: UserName starts with a digit and is too long.   | Error: UserName starts with a digit and is too long. | Pass |
+| FirstName: John      | Registration succeeds (FirstName meets requirements).   | Registration succeeds (FirstName is valid).  |  Pass   |
+| FirstName: 123Anne   | Error: FirstName starts with a digit.                    | Error: FirstName starts with a digit.        |  Pass   |
+| FirstName: Anne-Marie| Error: FirstName contains invalid character '-'.        | Error: FirstName contains invalid character '-'. | Pass  |
+| Age: 18              | Registration succeeds (Age is minimum valid age).        | Registration succeeds (Age is 18).           |  Pass   |
+| Age: 64              | Registration succeeds (Age is maximum valid age).        | Registration succeeds (Age is 64).           |  Pass   |
+| Age: 17              | Error: Age is below minimum requirement.                 | Error: Age is below minimum requirement.     |  Pass   |
+| Age: 65              | Error: Age is above maximum requirement.                 | Error: Age is above maximum requirement.     |  Pass   |
+| Email: example@gmail.com | Registration succeeds (Email format is correct).     | Registration succeeds (Email format is correct). | Pass  |
+| Email: example@com   | Error: Email domain format is incorrect.                 | Error: Email domain format is incorrect.     |  Pass   |
+| Email: examplegmail.com | Error: Email missing '@'.                             | Error: Email missing '@'.                    |  Pass   |
+| City: Ottawa         | Registration succeeds (City is listed).                  | Registration succeeds (City is Ottawa).      |  Pass   |
+| City: New York       | Error: City not listed.                                  | Error: City not listed.                      |  Pass   |
+| Postal Code: A1B 2C3 | Registration succeeds (Postal code format is correct).   | Registration succeeds (Postal code format is correct). | Pass |
+| Postal Code: A1B2C3  | Registration succeeds (Postal code format is correct).   | Registration succeeds (Postal code format is correct). | Pass |
+| Postal Code: D1F2G3  | Error: Postal Code uses restricted letters.              | Error: Postal Code uses restricted letters.  |  Pass   |
+| Postal Code: A1 B2C3 | Error: Incorrect placement of optional space.            | Error: Incorrect placement of optional space. |  Pass   |
 
-|      Test Case       | Expected Result | Actual Result | Verdict |
-|:--------------------:|:---------------:|:-------------:|:-------:|
-| constructor_int_ok   | Pass            | Pass          | Pass    |
-| constructor_int_tooLarge | Pass        | Pass          | Pass    |
-| constructor_int_tooSmall | Pass        | Pass          | Pass    |
-| constructor_Bit      | Pass            | Pass          | Pass    |
-| hashCode_values      | Pass            | Pass          | Pass    |
-| getIntValue          | Pass            | Pass          | Pass    |
-| equals               | Pass            | Pass          | Pass    |
-| toString_values      | Pass            | Pass          | Pass    |
-| or                   | Pass            | Pass          | Pass    |
-| and                  | Pass            | Pass          | Pass    |
-| not                  | Pass            | Pass          | Pass    |
-| xor                  | Pass            | Pass          | Pass    |
-| setValue             | Pass            | Pass          | Pass    |
-| constructor_default_0| Pass            | Pass          | Pass    |
 
 
 ## Exercise 2
