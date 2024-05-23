@@ -6,12 +6,25 @@ This README provides an overview of the unit tests for the `Date` class, which i
 
 ### Table
 
-| Test Case | Expected Result | Actual Result | Verdict |
-|:-------------:|:--------------:|:--------------:| :--------------:|
+|      Test Case       | Expected Result | Actual Result | Verdict |
+|:--------------------:|:---------------:|:-------------:|:-------:|
+| constructor_int_ok   | Pass            | Pass          | Pass    |
+| constructor_int_tooLarge | Pass        | Pass          | Pass    |
+| constructor_int_tooSmall | Pass        | Pass          | Pass    |
+| constructor_Bit      | Pass            | Pass          | Pass    |
+| hashCode_values      | Pass            | Pass          | Pass    |
+| getIntValue          | Pass            | Pass          | Pass    |
+| equals               | Pass            | Pass          | Pass    |
+| toString_values      | Pass            | Pass          | Pass    |
+| or                   | Pass            | Pass          | Pass    |
+| and                  | Pass            | Pass          | Pass    |
+| not                  | Pass            | Pass          | Pass    |
+| xor                  | Pass            | Pass          | Pass    |
+| setValue             | Pass            | Pass          | Pass    |
+| constructor_default_0| Pass            | Pass          | Pass    |
+
 
 ## Exercise 2
-
-
 
 ### Test Classes
 
