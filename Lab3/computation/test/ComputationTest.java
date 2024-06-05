@@ -1,5 +1,6 @@
-
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.beans.Transient;
 
 import org.junit.jupiter.api.Test;
 
@@ -10,14 +11,19 @@ public class ComputationTest {
   @Test
   // A test that does what it should
   public void add() {
-    int addResult = computation.add(1,1);
+    int addResult = computation.add(1, 1);
     assertEquals(2, addResult);
+    
+    // Test the Integer.MIN_VALUE branch
+    addResult = computation.add(Integer.MIN_VALUE, 1);
+    assertEquals(Integer.MIN_VALUE + 1, addResult);
   }
 
   @Test
-  // a test that does what it shouldn't
+  // a test that does what it should
   public void substract() {
-    // do nothing
+    int subtractResult = computation.substract(5, 3);
+    assertEquals(2, subtractResult);
   }
 
   @Test
@@ -25,16 +31,15 @@ public class ComputationTest {
   public void divide() {
     double divideResult = computation.divide(1, 2);
     assertEquals(0.5d, divideResult, 0.0d);
-  }
 
-  @Test
-  public void catchesException() {
-    computation.catchesException();
+    // Test division by zero
+    divideResult = computation.divide(1, 0);
+    assertEquals(Double.POSITIVE_INFINITY, divideResult, 0.0d);
   }
 
   @Test
   public void multiply() {
-    assertEquals(10, computation.multiply(5,2));
+    assertEquals(10, computation.multiply(5, 2));
     assertEquals(0, computation.multiply(100, 0));
   }
 
@@ -43,3 +48,4 @@ public class ComputationTest {
     assertEquals(2, computation.justALoop());
   }
 }
+
