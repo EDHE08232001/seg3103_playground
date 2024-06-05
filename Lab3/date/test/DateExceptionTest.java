@@ -1,7 +1,6 @@
 import java.util.LinkedList;
 import java.util.List;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -14,37 +13,26 @@ public class DateExceptionTest {
 	private int month;
 	private int day;
 
-	private int expectedYear;
-	private int expectedMont;
-	private int expectedDay;
-
-	public DateExceptionTest(int y,int m,int d, int ey,int em,int ed){
-
-		year = y;
-		month = m;
-		day = d;
-		expectedYear=ey;
-		expectedMont=em;
-		expectedDay=ed;
+	public DateExceptionTest(int year, int month, int day) {
+		this.year = year;
+		this.month = month;
+		this.day = day;
 	}
 
 	@Parameters
-	public static List<Integer[]> data(){
-		List<Integer[]> params = new LinkedList<Integer[]>();
-		params.add(new Integer[] {1500,	02,	31,	0,0,0});
-		params.add(new Integer[] {1500,	02,	29,	0,0,0});
-		params.add(new Integer[] {-1,	10,	20,	0,0,0});
-		params.add(new Integer[] {1458,	15,	12,	0,0,0});
-		params.add(new Integer[] {1975, 6,-50,0,0,0});
+	public static List<Integer[]> data() {
+		List<Integer[]> params = new LinkedList<>();
+		params.add(new Integer[] { 1500, 2, 31 }); // Invalid date
+		params.add(new Integer[] { 1500, 2, 29 }); // Invalid date (1500 is not a leap year)
+		params.add(new Integer[] { -1, 10, 20 }); // Invalid year
+		params.add(new Integer[] { 1458, 15, 12 }); // Invalid month
+		params.add(new Integer[] { 1975, 6, -50 }); // Invalid day
 		return params;
 	}
 
-	@Test(expected=IllegalArgumentException.class)
-	public void tests(){
-    		Date  date = new Date(year,month,day);
-		Date next = date.nextDate();
-		Assert.assertEquals(expectedYear, next.getYear());
-		Assert.assertEquals(expectedMont, next.getMonth());
-		Assert.assertEquals(expectedDay, next.getDay());
+	@Test(expected = IllegalArgumentException.class)
+	public void testInvalidDate() {
+		// This will throw an IllegalArgumentException if the date is invalid
+		new Date(year, month, day);
 	}
 }

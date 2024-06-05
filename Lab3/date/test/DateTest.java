@@ -111,42 +111,63 @@ class DateTest {
 
   @Test
   void nextDate_invalid_tc16() {
+    // Creating a date that will result in an invalid date when `nextDate()` is
+    // called
     assertThrows(
-      IllegalArgumentException.class,
-      () -> new Date(1500, 2, 31)
-    );
+        IllegalArgumentException.class,
+        () -> new Date(1500, 2, 30));
   }
 
   @Test
   void nextDate_invalid_tc17() {
+    // Creating a date that will result in an invalid date when `nextDate()` is
+    // called
     assertThrows(
-      IllegalArgumentException.class,
-      () -> new Date(1500, 2, 29)
-    );
+        IllegalArgumentException.class,
+        () -> new Date(1500, 2, 29));
   }
 
   @Test
   void nextDate_invalid_tc18() {
+    // Invalid year directly through constructor
     assertThrows(
-      IllegalArgumentException.class,
-      () -> new Date(-1, 10, 20)
-    );
+        IllegalArgumentException.class,
+        () -> new Date(-1, 10, 20));
   }
 
   @Test
   void nextDate_invalid_tc19() {
+    // Invalid month directly through constructor
     assertThrows(
-      IllegalArgumentException.class,
-      () -> new Date(1458, 15, 12)
-    );
+        IllegalArgumentException.class,
+        () -> new Date(1458, 15, 12));
   }
 
   @Test
   void nextDate_invalid_tc20() {
+    // Invalid day directly through constructor
     assertThrows(
-      IllegalArgumentException.class,
-      () -> new Date(1975, 6, -50)
-    );
+        IllegalArgumentException.class,
+        () -> new Date(1975, 6, -50));
+  }
+
+  @Test
+  void testToString() {
+    Date date = new Date(2024, 6, 15);
+    assertEquals("2024/June/15", date.toString());
+  }
+
+  @Test
+  void testEquals() {
+    Date date1 = new Date(2024, 6, 15);
+    Date date2 = new Date(2024, 6, 15);
+    Date date3 = new Date(2023, 5, 14);
+
+    assertTrue(date1.equals(date1)); // Same object
+    assertTrue(date1.equals(date2)); // Different objects, same values
+    assertFalse(date1.equals(date3)); // Different values
+    assertFalse(date1.equals(null)); // Comparison with null
+    assertFalse(date1.equals("2024/June/15")); // Different type
   }
 
 }
