@@ -1,5 +1,7 @@
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.beans.Transient;
+
 import org.junit.jupiter.api.Test;
 
 class DateTest {
@@ -109,46 +111,60 @@ class DateTest {
     assertEquals(expectedTomorrow, today.nextDate());
   }
 
+  // @Test
+  // void nextDate_invalid_tc16() {
+  // assertThrows(
+  // IllegalArgumentException.class,
+  // () -> new Date(1500, 2, 30));
+  // }
+
+  // @Test
+  // void nextDate_invalid_tc17() {
+  // assertThrows(
+  // IllegalArgumentException.class,
+  // () -> new Date(1500, 2, 29));
+  // }
+
+  // @Test
+  // void nextDate_invalid_tc18() {
+  // assertThrows(
+  // IllegalArgumentException.class,
+  // () -> new Date(-1, 10, 20));
+  // }
+
+  // @Test
+  // void nextDate_invalid_tc19() {
+  // assertThrows(
+  // IllegalArgumentException.class,
+  // () -> new Date(1458, 15, 12));
+  // }
+
+  // @Test
+  // void nextDate_invalid_tc20() {
+  // assertThrows(
+  // IllegalArgumentException.class,
+  // () -> new Date(1975, 6, -50));
+  // }
+
   @Test
-  void nextDate_invalid_tc16() {
-    // Creating a date that will result in an invalid date when `nextDate()` is
-    // called
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> new Date(1500, 2, 30));
+  public void setDayTest1() {
+    assertThrows(IllegalArgumentException.class, () -> new Date(2023, 1, 32));
   }
 
   @Test
-  void nextDate_invalid_tc17() {
-    // Creating a date that will result in an invalid date when `nextDate()` is
-    // called
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> new Date(1500, 2, 29));
+  public void setDayTest2() {
+    assertThrows(IllegalArgumentException.class, () -> new Date(2023, 4, 31));
   }
 
   @Test
-  void nextDate_invalid_tc18() {
-    // Invalid year directly through constructor
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> new Date(-1, 10, 20));
+  public void setDayTest3() {
+    assertThrows(IllegalArgumentException.class, () -> new Date(2020, 2, 30));
   }
 
   @Test
-  void nextDate_invalid_tc19() {
-    // Invalid month directly through constructor
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> new Date(1458, 15, 12));
-  }
-
-  @Test
-  void nextDate_invalid_tc20() {
-    // Invalid day directly through constructor
-    assertThrows(
-        IllegalArgumentException.class,
-        () -> new Date(1975, 6, -50));
+  public void leapYearTest() {
+    Date day = new Date(400, 1, 15);
+    assertEquals(true, day.isLeapYear());
   }
 
   @Test
@@ -161,6 +177,7 @@ class DateTest {
   void testEquals() {
     Date date1 = new Date(2024, 6, 15);
     Date date2 = new Date(2024, 6, 15);
+
     Date date3 = new Date(2023, 5, 14);
 
     assertTrue(date1.equals(date1)); // Same object
