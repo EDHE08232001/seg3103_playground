@@ -27,6 +27,11 @@ public class ComputationTest {
   }
 
   @Test
+  public void catchesException() {
+    computation.catchesException();
+  }
+
+  @Test
   // a test that partially does what it should
   public void divide() {
     double divideResult = computation.divide(1, 2);
