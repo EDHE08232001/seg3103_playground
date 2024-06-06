@@ -8,24 +8,21 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
-public class DateNextDateExceptionTest
-{
+public class DateNextDateExceptionTest {
 
   private int year;
   private int month;
   private int day;
 
-  public DateNextDateExceptionTest(int year, int month, int day)
-  {
+  public DateNextDateExceptionTest(int year, int month, int day) {
     this.year = year;
     this.month = month;
     this.day = day;
   }
 
   @Parameters
-  public static List<Integer[]> data( )
-  {
-    List<Integer[]> params = new LinkedList<Integer[]>( );
+  public static List<Integer[]> data() {
+    List<Integer[]> params = new LinkedList<Integer[]>();
     params.add(new Integer[] { 1500, 02, 31 });
     params.add(new Integer[] { 1500, 02, 29 });
     params.add(new Integer[] { -1, 10, 20 });
@@ -35,9 +32,8 @@ public class DateNextDateExceptionTest
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testNextDate()
-  {
-    new Date(year, month, day);
+  public void testNextDate() {
+    new Date(year, month, day).nextDate();
   }
 
 }

@@ -207,21 +207,21 @@ class DateTest {
   }
 
   @Test
-  void nextDate_invalid_setDay() {
+  void invalid_setDay() {
     assertThrows(
         IllegalArgumentException.class,
         () -> new Date(1975, 8, 33));
   }
 
   @Test
-  void nextDate_invalid_setDay2() {
+  void invalid_setDay2() {
     assertThrows(
         IllegalArgumentException.class,
         () -> new Date(2010, 4, 31));
   }
 
   @Test
-  void nextDate_invalid_setDay3() {
+  void invalid_setDay3() {
     assertThrows(
         IllegalArgumentException.class,
         () -> new Date(2020, 2, 30));
