@@ -6,45 +6,42 @@ class TestCalculator(unittest.TestCase):
     def setUp(self):
         self.calc = Calculator()
 
+    def _run_test_cases(self, method, test_cases):
+        for inputs, expected in test_cases:
+            with self.subTest(inputs=inputs, expected=expected):
+                self.assertEqual(method(*inputs), expected)
+
     def test_add(self):
         test_cases = [
-            (1, 2, 3),
-            (-1, -1, -2),
-            (-1, 1, 0)
+            ((1, 2), 3),
+            ((-1, -1), -2),
+            ((-1, 1), 0)
         ]
-        for a, b, expected in test_cases:
-            with self.subTest(a=a, b=b, expected=expected):
-                self.assertEqual(self.calc.add(a, b), expected)
+        self._run_test_cases(self.calc.add, test_cases)
 
     def test_subtract(self):
         test_cases = [
-            (2, 1, 1),
-            (-1, -1, 0),
-            (-1, 1, -2)
+            ((2, 1), 1),
+            ((-1, -1), 0),
+            ((-1, 1), -2)
         ]
-        for a, b, expected in test_cases:
-            with self.subTest(a=a, b=b, expected=expected):
-                self.assertEqual(self.calc.subtract(a, b), expected)
+        self._run_test_cases(self.calc.subtract, test_cases)
 
     def test_multiply(self):
         test_cases = [
-            (2, 3, 6),
-            (-1, -1, 1),
-            (-1, 1, -1)
+            ((2, 3), 6),
+            ((-1, -1), 1),
+            ((-1, 1), -1)
         ]
-        for a, b, expected in test_cases:
-            with self.subTest(a=a, b=b, expected=expected):
-                self.assertEqual(self.calc.multiply(a, b), expected)
+        self._run_test_cases(self.calc.multiply, test_cases)
 
     def test_divide(self):
         test_cases = [
-            (6, 3, 2),
-            (-1, -1, 1),
-            (-1, 1, -1)
+            ((6, 3), 2),
+            ((-1, -1), 1),
+            ((-1, 1), -1)
         ]
-        for a, b, expected in test_cases:
-            with self.subTest(a=a, b=b, expected=expected):
-                self.assertEqual(self.calc.divide(a, b), expected)
+        self._run_test_cases(self.calc.divide, test_cases)
 
         with self.assertRaises(ValueError):
             self.calc.divide(1, 0)
@@ -55,9 +52,9 @@ class TestCalculator(unittest.TestCase):
             (-3, 9),
             (0, 0)
         ]
-        for a, expected in test_cases:
-            with self.subTest(a=a, expected=expected):
-                self.assertEqual(self.calc.square(a), expected)
+        for input_value, expected in test_cases:
+            with self.subTest(input_value=input_value, expected=expected):
+                self.assertEqual(self.calc.square(input_value), expected)
 
 if __name__ == '__main__':
     unittest.main()
