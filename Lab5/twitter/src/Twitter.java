@@ -18,7 +18,9 @@ public class Twitter {
 
   public boolean isMentionned(String name) {
     String tweet = loadTweet();
-    return tweet.contains("@" + name);
+    if (tweet == null) {
+      return false;
+    }
+    return tweet.matches(".*\\b@" + name + "\\b.*");
   }
-
 }
