@@ -8,12 +8,14 @@ class TwitterTest {
 
     @Test
     void actual_call() {
+        Twitter twitter = partialMockBuilder(Twitter.class)
+                .addMockedMethod("loadTweet")
+                .createMock();
 
-        Twitter twitter = new Twitter();
+        expect(twitter.loadTweet()).andReturn("Hello @me");
+        replay(twitter);
 
-        boolean actual;
-
-        actual = twitter.isMentionned("me");
+        boolean actual = twitter.isMentionned("me");
         assertEquals(true, actual);
     }
 
@@ -39,8 +41,8 @@ class TwitterTest {
     void mock_partial_object() {
 
         Twitter twitter = partialMockBuilder(Twitter.class)
-          .addMockedMethod("loadTweet")
-          .createMock();
+                .addMockedMethod("loadTweet")
+                .createMock();
 
         expect(twitter.loadTweet()).andReturn("hello @me").times(2);
         replay(twitter);
@@ -56,29 +58,29 @@ class TwitterTest {
 
     // @Test
     // void isMentionned_lookForAtSymbol() {
-    //   // Assuming a tweet like "hello @me"
-    //   // isMentionned("me") should be true
-    //   // isMentionned("you") should be false
+    // // Assuming a tweet like "hello @me"
+    // // isMentionned("me") should be true
+    // // isMentionned("you") should be false
     // }
 
     // @Test
     // void isMentionned_dontReturnSubstringMatches() {
-    //   // Assuming a tweet like "hello @meat"
-    //   // isMentionned("me") should be false
-    //   // isMentionned("meat") should be true
+    // // Assuming a tweet like "hello @meat"
+    // // isMentionned("me") should be false
+    // // isMentionned("meat") should be true
     // }
 
     // @Test
     // void isMentionned_superStringNotFound() {
-    //   // Assuming a tweet like "hello @me"
-    //   // isMentionned("me") should be true
-    //   // isMentionned("meat") should be false
+    // // Assuming a tweet like "hello @me"
+    // // isMentionned("me") should be true
+    // // isMentionned("meat") should be false
     // }
 
     // @Test
     // void isMentionned_handleNull() {
-    //   // Assuming no tweet is available (i.e. null)
-    //   // isMentionned("me") should be false
-    //   // isMentionned("meat") should be false
+    // // Assuming no tweet is available (i.e. null)
+    // // isMentionned("me") should be false
+    // // isMentionned("meat") should be false
     // }
 }
