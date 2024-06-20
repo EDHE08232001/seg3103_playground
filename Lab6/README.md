@@ -3,28 +3,21 @@
 
 
 
-### Part 1: Prerequisites
-![image](https://user-images.githubusercontent.com/55165117/125734370-69770d9b-9424-4e7e-babf-1dd5ffd076ef.png)
+### Part 1: Setup
+![image](./assets/setup.png)
 
 
-### Part 2: Initial Compilations and Testing
-![image](https://user-images.githubusercontent.com/55165117/125734546-a73c33cd-05ba-435f-80c6-b3a660d193f6.png)
+### Part 2: Run Application
 
-
-run `mvn package -DskipTests`
-![image](https://user-images.githubusercontent.com/55165117/125735091-ec5938ce-c9af-4a03-958b-227098ae42d8.png)
-![image](https://user-images.githubusercontent.com/55165117/125739336-f3cad89b-7a62-4bf4-8d2f-2db7422ebd16.png)
-
-
-ran `java -jar ./target/BookstoreApp-0.1.0.jar`.
-![image](https://user-images.githubusercontent.com/55165117/125735166-bb73a9c5-da9b-4038-b401-fbe2a231fd21.png)
+run `mvn package -DskipTests` and `java -jar ./target/BookstoreApp-0.1.0.jar`.
+![image](./assets/run.png)
 
 
 Application
-![image](https://user-images.githubusercontent.com/55165117/125735271-21c8e8b0-8eaa-4cb4-9819-3c9ac1f37eeb.png)
+![image](./assets/application.png)
 
 `mvn test`
-![image](https://user-images.githubusercontent.com/55165117/125735865-5189c41d-5625-47c2-a2ce-df2da22944f9.png)
+![image](./assets/test.png)
 
 ### Part 3: Additional Testing
 

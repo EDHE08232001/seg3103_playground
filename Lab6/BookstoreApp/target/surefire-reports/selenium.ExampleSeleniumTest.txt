@@ -1,4 +1,97 @@
 -------------------------------------------------------------------------------
 Test set: selenium.ExampleSeleniumTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 38.01 s - in selenium.ExampleSeleniumTest
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 9.563 s <<< FAILURE! - in selenium.ExampleSeleniumTest
+test1  Time elapsed: 5.677 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 126.0.6478.115 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Edwards-MacBook-Air.local', ip: 'fe80:0:0:0:810:536:d6f5:bd3f%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '14.5', java.version: '22.0.1'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: 0   chromedriver                        0x000000010eacf6b8 chromedriver + 4937400
+1   chromedriver                        0x000000010eac6b73 chromedriver + 4901747
+2   chromedriver                        0x000000010e684616 chromedriver + 435734
+3   chromedriver                        0x000000010e6b6d10 chromedriver + 642320
+4   chromedriver                        0x000000010e6b218a chromedriver + 622986
+5   chromedriver                        0x000000010e6ae67c chromedriver + 607868
+6   chromedriver                        0x000000010e6f5a08 chromedriver + 899592
+7   chromedriver                        0x000000010e6f4ebf chromedriver + 896703
+8   chromedriver                        0x000000010e6ebde3 chromedriver + 859619
+9   chromedriver                        0x000000010e6b9d7f chromedriver + 654719
+10  chromedriver                        0x000000010e6bb0de chromedriver + 659678
+11  chromedriver                        0x000000010ea8b2ad chromedriver + 4657837
+12  chromedriver                        0x000000010ea90130 chromedriver + 4677936
+13  chromedriver                        0x000000010ea96def chromedriver + 4705775
+14  chromedriver                        0x000000010ea9105a chromedriver + 4681818
+15  chromedriver                        0x000000010ea6392c chromedriver + 4495660
+16  chromedriver                        0x000000010eaae838 chromedriver + 4802616
+17  chromedriver                        0x000000010eaae9b7 chromedriver + 4802999
+18  chromedriver                        0x000000010eabf99f chromedriver + 4872607
+19  libsystem_pthread.dylib             0x00007ff81304e18b _pthread_start + 99
+20  libsystem_pthread.dylib             0x00007ff813049ae3 thread_start + 15
+
+	at selenium.ExampleSeleniumTest.setUp(ExampleSeleniumTest.java:36)
+
+test2  Time elapsed: 2.028 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 126.0.6478.115 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Edwards-MacBook-Air.local', ip: 'fe80:0:0:0:810:536:d6f5:bd3f%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '14.5', java.version: '22.0.1'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: 0   chromedriver                        0x000000010d1336b8 chromedriver + 4937400
+1   chromedriver                        0x000000010d12ab73 chromedriver + 4901747
+2   chromedriver                        0x000000010cce8616 chromedriver + 435734
+3   chromedriver                        0x000000010cd1ad10 chromedriver + 642320
+4   chromedriver                        0x000000010cd1618a chromedriver + 622986
+5   chromedriver                        0x000000010cd1267c chromedriver + 607868
+6   chromedriver                        0x000000010cd59a08 chromedriver + 899592
+7   chromedriver                        0x000000010cd58ebf chromedriver + 896703
+8   chromedriver                        0x000000010cd4fde3 chromedriver + 859619
+9   chromedriver                        0x000000010cd1dd7f chromedriver + 654719
+10  chromedriver                        0x000000010cd1f0de chromedriver + 659678
+11  chromedriver                        0x000000010d0ef2ad chromedriver + 4657837
+12  chromedriver                        0x000000010d0f4130 chromedriver + 4677936
+13  chromedriver                        0x000000010d0fadef chromedriver + 4705775
+14  chromedriver                        0x000000010d0f505a chromedriver + 4681818
+15  chromedriver                        0x000000010d0c792c chromedriver + 4495660
+16  chromedriver                        0x000000010d112838 chromedriver + 4802616
+17  chromedriver                        0x000000010d1129b7 chromedriver + 4802999
+18  chromedriver                        0x000000010d12399f chromedriver + 4872607
+19  libsystem_pthread.dylib             0x00007ff81304e18b _pthread_start + 99
+20  libsystem_pthread.dylib             0x00007ff813049ae3 thread_start + 15
+
+	at selenium.ExampleSeleniumTest.setUp(ExampleSeleniumTest.java:36)
+
+test3  Time elapsed: 1.842 s  <<< ERROR!
+org.openqa.selenium.SessionNotCreatedException: 
+session not created: This version of ChromeDriver only supports Chrome version 114
+Current browser version is 126.0.6478.115 with binary path /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'Edwards-MacBook-Air.local', ip: 'fe80:0:0:0:810:536:d6f5:bd3f%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '14.5', java.version: '22.0.1'
+Driver info: driver.version: ChromeDriver
+remote stacktrace: 0   chromedriver                        0x000000010bfdb6b8 chromedriver + 4937400
+1   chromedriver                        0x000000010bfd2b73 chromedriver + 4901747
+2   chromedriver                        0x000000010bb90616 chromedriver + 435734
+3   chromedriver                        0x000000010bbc2d10 chromedriver + 642320
+4   chromedriver                        0x000000010bbbe18a chromedriver + 622986
+5   chromedriver                        0x000000010bbba67c chromedriver + 607868
+6   chromedriver                        0x000000010bc01a08 chromedriver + 899592
+7   chromedriver                        0x000000010bc00ebf chromedriver + 896703
+8   chromedriver                        0x000000010bbf7de3 chromedriver + 859619
+9   chromedriver                        0x000000010bbc5d7f chromedriver + 654719
+10  chromedriver                        0x000000010bbc70de chromedriver + 659678
+11  chromedriver                        0x000000010bf972ad chromedriver + 4657837
+12  chromedriver                        0x000000010bf9c130 chromedriver + 4677936
+13  chromedriver                        0x000000010bfa2def chromedriver + 4705775
+14  chromedriver                        0x000000010bf9d05a chromedriver + 4681818
+15  chromedriver                        0x000000010bf6f92c chromedriver + 4495660
+16  chromedriver                        0x000000010bfba838 chromedriver + 4802616
+17  chromedriver                        0x000000010bfba9b7 chromedriver + 4802999
+18  chromedriver                        0x000000010bfcb99f chromedriver + 4872607
+19  libsystem_pthread.dylib             0x00007ff81304e18b _pthread_start + 99
+20  libsystem_pthread.dylib             0x00007ff813049ae3 thread_start + 15
+
+	at selenium.ExampleSeleniumTest.setUp(ExampleSeleniumTest.java:36)
+
