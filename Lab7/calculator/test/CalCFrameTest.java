@@ -6,10 +6,10 @@ import java.lang.reflect.Field;
 
 class CalcFrameTest {
 
-  @Test
-  void do_nothing() {
-  	assertEquals(1, 1);
-  }
+	@Test
+	void do_nothing() {
+		assertEquals(1, 1);
+	}
 
 	private void setClearscreen(CalCFrame cframe, boolean val) {
 		try {
