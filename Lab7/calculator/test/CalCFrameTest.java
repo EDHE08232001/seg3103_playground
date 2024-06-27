@@ -6,12 +6,12 @@ import java.lang.reflect.Field;
 
 class CalcFrameTest {
 
-	@Test
-	void do_nothing() {
-		assertEquals(1, 1);
-	}
+  @Test
+  void do_nothing() {
+  	assertEquals(1, 1);
+  }
 
-	private void setClearscreen(CalCFrame cframe, boolean val) {
+	/* private void setClearscreen(CalCFrame cframe, boolean val) {
 		try {
 			Field f = cframe.getClass().getDeclaredField("clearscreen");
 			f.setAccessible(true);
@@ -29,5 +29,5 @@ class CalcFrameTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
+	} */
 }
