@@ -71,11 +71,11 @@ Fix:
 ![image](./assets/fix5b.png)
 
 ### Bugs 7-12: Unread field: should this field be static?:
-![image](./assets/Bug7to12.png.png)
+![image](./assets/Bug7to12.png)
 
 Fix:
 
-![image](./assets/fix7to12.png.png)
+![image](./assets/fix7to12.png)
 
 ### Bug 13: Method uses the same code for two branches:
 
@@ -87,11 +87,11 @@ Fix:
 
 
 ### Bug 14: Switch statement found where default case is missing
-![image](./assets/Bug14.png.png)
+![image](./assets/Bug14.png)
 
 Fix:
 
-![image](./assets/fix14.png.png)
+![image](./assets/fix14.png)
 
 ### Bugs 15-18: Condition has no effect
 Below are screenshots of the bug before making the changes:
