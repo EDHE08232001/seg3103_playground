@@ -1,6 +1,6 @@
 # LAB 7
 
-## SETUP
+### SETUP
 
 Running
 
